@@ -20,7 +20,7 @@ def main():
       content = f.read()
       log_with_color(f"Cache file content:\n{content}", color="g")
     with open(fn, "a") as f:
-      f.write("Demo run.")
+      f.write("Updated Demo run.")
   except Exception as e:
     log_with_color(f"Error reading/writing cache file: {e}", color='r')
   
