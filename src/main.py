@@ -16,9 +16,10 @@ def main():
   fn = os.path.join(DEMO_CACHE, DEMO_CACHE_FN)
   log_with_color(f"Cache file: {fn}", color="gray")
   try:
-    with open(fn, "rt") as f:
-      content = f.read()
-      log_with_color(f"Cache file content:\n{content}", color="g")
+    if os.path.exists(fn):
+      with open(fn, "rt") as f:
+        content = f.read()
+        log_with_color(f"Cache file content:\n{content}", color="g")
     with open(fn, "a") as f:
       f.write("Updated Demo run.")
   except Exception as e:
