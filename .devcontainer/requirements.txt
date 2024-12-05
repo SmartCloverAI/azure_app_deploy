@@ -44,3 +44,8 @@ azureml-train-restclients-hyperdrive==1.57.0
 azureml-training-tabular==1.57.0.post1
 prophet==1.1.4
 xgboost==1.5.2
+fastapi
+uvicorn
+pydantic
+psycopg2-binary
+python-multipart
