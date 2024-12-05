@@ -1,0 +1,24 @@
+auth_mode: key
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/weekly-product-stocks
+identity:
+  principal_id: 9e945193-37a6-4cdb-9909-74a325c44677
+  tenant_id: 214ea6ae-b24f-4306-b3a4-e32342fa5dfc
+  type: system_assigned
+kind: Managed
+location: westeurope
+mirror_traffic: {}
+name: weekly-product-stocks
+openapi_uri: https://weekly-product-stocks.westeurope.inference.ml.azure.com/swagger.json
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:456b216c-ab7c-4075-a5bf-4eb150a7eec1?api-version=2022-02-01-preview
+  azureml.onlineendpointid: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/weekly-product-stocks
+  createdAt: 2024-10-16T08:16:11.756840+0000
+  createdBy: Ionut Alexandru Popescu
+  lastModifiedAt: 2024-10-16T08:16:11.756840+0000
+provisioning_state: Succeeded
+public_network_access: enabled
+resourceGroup: AiMethica-ML
+scoring_uri: https://weekly-product-stocks.westeurope.inference.ml.azure.com/score
+tags: {}
+traffic:
+  strongplatek5hq114-1: 100

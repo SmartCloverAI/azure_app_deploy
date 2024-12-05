@@ -1,0 +1,24 @@
+auth_mode: key
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/clf-income-expenditure-trans
+identity:
+  principal_id: fe236b30-82e6-4da3-9e40-2dbf2a060ab6
+  tenant_id: 214ea6ae-b24f-4306-b3a4-e32342fa5dfc
+  type: system_assigned
+kind: Managed
+location: westeurope
+mirror_traffic: {}
+name: clf-income-expenditure-trans
+openapi_uri: https://clf-income-expenditure-trans.westeurope.inference.ml.azure.com/swagger.json
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:ce85a0aa-0ed8-4bc9-a472-510db45cb906?api-version=2022-02-01-preview
+  azureml.onlineendpointid: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/clf-income-expenditure-trans
+  createdAt: 2024-10-16T15:23:45.957456+0000
+  createdBy: Ionut Alexandru Popescu
+  lastModifiedAt: 2024-10-16T15:23:45.957456+0000
+provisioning_state: Succeeded
+public_network_access: enabled
+resourceGroup: AiMethica-ML
+scoring_uri: https://clf-income-expenditure-trans.westeurope.inference.ml.azure.com/score
+tags: {}
+traffic:
+  amusingseal2svj311-1: 100

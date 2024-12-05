@@ -1,0 +1,25 @@
+auth_mode: key
+description: Anomaly detection model for the DOCUMENT FACTURI IESIRE dataset.
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/anomaly-document-facturi-iesire
+identity:
+  principal_id: afd413f2-e252-40ea-a525-744394f7f89b
+  tenant_id: 214ea6ae-b24f-4306-b3a4-e32342fa5dfc
+  type: system_assigned
+kind: Managed
+location: westeurope
+mirror_traffic: {}
+name: anomaly-document-facturi-iesire
+openapi_uri: https://anomaly-document-facturi-iesire.westeurope.inference.ml.azure.com/swagger.json
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:692d1a83-4285-4b7f-94a1-6f1cc998aee3?api-version=2022-02-01-preview
+  azureml.onlineendpointid: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/anomaly-document-facturi-iesire
+  createdAt: 2024-09-19T22:03:38.026747+0000
+  createdBy: Ionut Alexandru Popescu
+  lastModifiedAt: 2024-09-19T22:03:38.026747+0000
+provisioning_state: Succeeded
+public_network_access: enabled
+resourceGroup: AiMethica-ML
+scoring_uri: https://anomaly-document-facturi-iesire.westeurope.inference.ml.azure.com/score
+tags: {}
+traffic:
+  tff-blue: 0

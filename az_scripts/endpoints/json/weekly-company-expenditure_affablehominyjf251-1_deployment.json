@@ -1,0 +1,49 @@
+{
+  "app_insights_enabled": false,
+  "creation_context": {
+    "created_at": "2024-10-15T07:19:45.146348+00:00",
+    "created_by": "Ionut Alexandru Popescu",
+    "last_modified_at": "2024-10-15T07:19:45.146349+00:00"
+  },
+  "egress_public_network_access": "enabled",
+  "endpoint_name": "weekly-company-expenditure",
+  "environment": "azureml:/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/environments/DefaultNcdEnv-ai-ml-automl/versions/5",
+  "environment_variables": {
+    "AML_APP_ROOT": "/var/mlflow_resources",
+    "AZUREML_ENTRY_SCRIPT": "mlflow_score_script.py",
+    "AZUREML_MODEL_DIR": "/var/azureml-app/azureml-models/affablehominyjf251/1"
+  },
+  "id": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/weekly-company-expenditure/deployments/affablehominyjf251-1",
+  "instance_count": 1,
+  "instance_type": "Standard_DS1_v2",
+  "liveness_probe": {
+    "failure_threshold": 30,
+    "initial_delay": 600,
+    "period": 10,
+    "success_threshold": 1,
+    "timeout": 2
+  },
+  "model": "azureml:/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/models/affablehominyjf251/versions/1",
+  "name": "affablehominyjf251-1",
+  "properties": {
+    "AzureAsyncOperationUri": "https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/odidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:34ae32ae-232a-42a1-a475-7fb761ac5ace?api-version=2023-04-01-preview"
+  },
+  "provisioning_state": "Succeeded",
+  "readiness_probe": {
+    "failure_threshold": 30,
+    "initial_delay": 10,
+    "period": 10,
+    "success_threshold": 1,
+    "timeout": 2
+  },
+  "request_settings": {
+    "max_concurrent_requests_per_instance": 1,
+    "request_timeout_ms": 90000
+  },
+  "resourceGroup": "AiMethica-ML",
+  "scale_settings": {
+    "type": "default"
+  },
+  "tags": {},
+  "type": "managed"
+}

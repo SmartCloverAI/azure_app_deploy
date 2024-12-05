@@ -1,0 +1,29 @@
+{
+  "auth_mode": "key",
+  "id": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/weekly-product-sale",
+  "identity": {
+    "principal_id": "8bd11ea6-09b6-4328-82b3-083773feafc3",
+    "tenant_id": "214ea6ae-b24f-4306-b3a4-e32342fa5dfc",
+    "type": "system_assigned"
+  },
+  "kind": "Managed",
+  "location": "westeurope",
+  "mirror_traffic": {},
+  "name": "weekly-product-sale",
+  "openapi_uri": "https://weekly-product-sale.westeurope.inference.ml.azure.com/swagger.json",
+  "properties": {
+    "AzureAsyncOperationUri": "https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:aab49b76-6442-4250-af32-4f942958c09e?api-version=2022-02-01-preview",
+    "azureml.onlineendpointid": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/weekly-product-sale",
+    "createdAt": "2024-10-16T08:13:19.348493+0000",
+    "createdBy": "Ionut Alexandru Popescu",
+    "lastModifiedAt": "2024-10-16T08:13:19.348493+0000"
+  },
+  "provisioning_state": "Succeeded",
+  "public_network_access": "enabled",
+  "resourceGroup": "AiMethica-ML",
+  "scoring_uri": "https://weekly-product-sale.westeurope.inference.ml.azure.com/score",
+  "tags": {},
+  "traffic": {
+    "shygardenwy1h3n50-1": 100
+  }
+}

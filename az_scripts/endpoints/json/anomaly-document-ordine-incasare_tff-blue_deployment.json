@@ -1,0 +1,53 @@
+{
+  "app_insights_enabled": false,
+  "code_configuration": {
+    "code": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/codes/d1c547ec-e447-4ba2-9105-50cfca1eb5d6/versions/1",
+    "scoring_script": "score.py"
+  },
+  "creation_context": {
+    "created_at": "2024-09-22T11:43:30.689753+00:00",
+    "created_by": "Ionut Alexandru Popescu",
+    "last_modified_at": "2024-09-22T11:43:30.689753+00:00"
+  },
+  "egress_public_network_access": "enabled",
+  "endpoint_name": "anomaly-document-ordine-incasare",
+  "environment": "azureml:/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/environments/aimethica-anomaly-env/versions/7",
+  "environment_variables": {
+    "AML_APP_ROOT": "/var/azureml-app/src",
+    "AZUREML_ENTRY_SCRIPT": "score.py",
+    "AZUREML_MODEL_DIR": "/var/azureml-app/azureml-models/anomaly_document_facturi_export/14"
+  },
+  "id": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/anomaly-document-ordine-incasare/deployments/tff-blue",
+  "instance_count": 1,
+  "instance_type": "Standard_DS1_v2",
+  "liveness_probe": {
+    "failure_threshold": 30,
+    "initial_delay": 10,
+    "period": 10,
+    "success_threshold": 1,
+    "timeout": 2
+  },
+  "model": "azureml:/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/models/anomaly_document_facturi_export/versions/14",
+  "name": "tff-blue",
+  "properties": {
+    "AzureAsyncOperationUri": "https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/odidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:45fe1681-48da-46b3-99c1-ee76c1a82ca0?api-version=2023-04-01-preview"
+  },
+  "provisioning_state": "Succeeded",
+  "readiness_probe": {
+    "failure_threshold": 30,
+    "initial_delay": 10,
+    "period": 10,
+    "success_threshold": 1,
+    "timeout": 2
+  },
+  "request_settings": {
+    "max_concurrent_requests_per_instance": 1,
+    "request_timeout_ms": 5000
+  },
+  "resourceGroup": "AiMethica-ML",
+  "scale_settings": {
+    "type": "default"
+  },
+  "tags": {},
+  "type": "managed"
+}

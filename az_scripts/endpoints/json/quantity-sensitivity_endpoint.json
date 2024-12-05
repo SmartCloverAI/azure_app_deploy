@@ -1,0 +1,30 @@
+{
+  "auth_mode": "key",
+  "description": "Quantity sensitivity endpoint, which predicts the company main KPIs based on different products quantities.",
+  "id": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/quantity-sensitivity",
+  "identity": {
+    "principal_id": "3dfe65ec-2631-4caa-8001-b3df3c37002e",
+    "tenant_id": "214ea6ae-b24f-4306-b3a4-e32342fa5dfc",
+    "type": "system_assigned"
+  },
+  "kind": "Managed",
+  "location": "westeurope",
+  "mirror_traffic": {},
+  "name": "quantity-sensitivity",
+  "openapi_uri": "https://quantity-sensitivity.westeurope.inference.ml.azure.com/swagger.json",
+  "properties": {
+    "AzureAsyncOperationUri": "https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:7a848309-5e7d-4595-85fb-cb59ffb93acb?api-version=2022-02-01-preview",
+    "azureml.onlineendpointid": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/quantity-sensitivity",
+    "createdAt": "2024-10-16T15:06:57.250393+0000",
+    "createdBy": "Ionut Alexandru Popescu",
+    "lastModifiedAt": "2024-10-16T15:06:57.250393+0000"
+  },
+  "provisioning_state": "Succeeded",
+  "public_network_access": "enabled",
+  "resourceGroup": "AiMethica-ML",
+  "scoring_uri": "https://quantity-sensitivity.westeurope.inference.ml.azure.com/score",
+  "tags": {},
+  "traffic": {
+    "tff-blue": 0
+  }
+}

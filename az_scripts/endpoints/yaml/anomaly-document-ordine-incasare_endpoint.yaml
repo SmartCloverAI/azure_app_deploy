@@ -1,0 +1,25 @@
+auth_mode: key
+description: Anomaly detection model for the DOCUMENT ORDINE DE INCASARE dataset.
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/anomaly-document-ordine-incasare
+identity:
+  principal_id: c62cd967-72c3-4725-bac6-4ba83754c2c4
+  tenant_id: 214ea6ae-b24f-4306-b3a4-e32342fa5dfc
+  type: system_assigned
+kind: Managed
+location: westeurope
+mirror_traffic: {}
+name: anomaly-document-ordine-incasare
+openapi_uri: https://anomaly-document-ordine-incasare.westeurope.inference.ml.azure.com/swagger.json
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:2b4f49dc-1fe2-4e7f-8319-25f85cf530c6?api-version=2022-02-01-preview
+  azureml.onlineendpointid: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/anomaly-document-ordine-incasare
+  createdAt: 2024-09-22T11:41:26.122362+0000
+  createdBy: Ionut Alexandru Popescu
+  lastModifiedAt: 2024-09-22T11:41:26.122362+0000
+provisioning_state: Succeeded
+public_network_access: enabled
+resourceGroup: AiMethica-ML
+scoring_uri: https://anomaly-document-ordine-incasare.westeurope.inference.ml.azure.com/score
+tags: {}
+traffic:
+  tff-blue: 0

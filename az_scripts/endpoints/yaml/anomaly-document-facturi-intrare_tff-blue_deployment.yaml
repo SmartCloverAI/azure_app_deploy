@@ -1,0 +1,43 @@
+app_insights_enabled: false
+code_configuration:
+  code: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/codes/396d6745-6ed6-4ab7-99ae-186ad4ff6978/versions/1
+  scoring_script: score.py
+creation_context:
+  created_at: '2024-09-20T12:31:24.188977+00:00'
+  created_by: Ionut Alexandru Popescu
+  last_modified_at: '2024-09-20T12:31:24.188980+00:00'
+egress_public_network_access: enabled
+endpoint_name: anomaly-document-facturi-intrare
+environment: azureml:/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/environments/aimethica-anomaly-env/versions/7
+environment_variables:
+  AML_APP_ROOT: /var/azureml-app/src
+  AZUREML_ENTRY_SCRIPT: score.py
+  AZUREML_MODEL_DIR: /var/azureml-app/azureml-models/anomaly_document_facturi_intrare/1
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/anomaly-document-facturi-intrare/deployments/tff-blue
+instance_count: 1
+instance_type: Standard_DS1_v2
+liveness_probe:
+  failure_threshold: 30
+  initial_delay: 10
+  period: 10
+  success_threshold: 1
+  timeout: 2
+model: azureml:/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/models/anomaly_document_facturi_intrare/versions/1
+name: tff-blue
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/odidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:c659561c-ce7d-4bcf-ae1f-86c70fb2ddfd?api-version=2023-04-01-preview
+provisioning_state: Succeeded
+readiness_probe:
+  failure_threshold: 30
+  initial_delay: 10
+  period: 10
+  success_threshold: 1
+  timeout: 2
+request_settings:
+  max_concurrent_requests_per_instance: 1
+  request_timeout_ms: 5000
+resourceGroup: AiMethica-ML
+scale_settings:
+  type: default
+tags: {}
+type: managed

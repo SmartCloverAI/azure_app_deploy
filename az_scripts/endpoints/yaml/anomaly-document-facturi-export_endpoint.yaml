@@ -1,0 +1,25 @@
+auth_mode: key
+description: Anomaly detection for the DOCUMENT FACTURI EXPORT dataset.
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/anomaly-document-facturi-export
+identity:
+  principal_id: 86b28cfd-fdc3-41e0-9b78-1ec549cbecd5
+  tenant_id: 214ea6ae-b24f-4306-b3a4-e32342fa5dfc
+  type: system_assigned
+kind: Managed
+location: westeurope
+mirror_traffic: {}
+name: anomaly-document-facturi-export
+openapi_uri: https://anomaly-document-facturi-export.westeurope.inference.ml.azure.com/swagger.json
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:eabdcc0f-8da9-4d05-81a3-7bbb56052bb2?api-version=2022-02-01-preview
+  azureml.onlineendpointid: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/anomaly-document-facturi-export
+  createdAt: 2024-09-19T09:38:48.786426+0000
+  createdBy: Ionut Alexandru Popescu
+  lastModifiedAt: 2024-09-19T09:38:48.786426+0000
+provisioning_state: Succeeded
+public_network_access: enabled
+resourceGroup: AiMethica-ML
+scoring_uri: https://anomaly-document-facturi-export.westeurope.inference.ml.azure.com/score
+tags: {}
+traffic:
+  tff-blue: 0

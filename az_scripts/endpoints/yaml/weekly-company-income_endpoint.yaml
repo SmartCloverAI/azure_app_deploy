@@ -1,0 +1,24 @@
+auth_mode: key
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/weekly-company-income
+identity:
+  principal_id: 75b8a131-071f-4413-84b6-f22ab184d995
+  tenant_id: 214ea6ae-b24f-4306-b3a4-e32342fa5dfc
+  type: system_assigned
+kind: Managed
+location: westeurope
+mirror_traffic: {}
+name: weekly-company-income
+openapi_uri: https://weekly-company-income.westeurope.inference.ml.azure.com/swagger.json
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:315d50d6-7cf0-4fb8-a4e8-e693bf2dd08f?api-version=2022-02-01-preview
+  azureml.onlineendpointid: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/weekly-company-income
+  createdAt: 2024-10-15T07:14:59.890127+0000
+  createdBy: Ionut Alexandru Popescu
+  lastModifiedAt: 2024-10-15T07:14:59.890127+0000
+provisioning_state: Succeeded
+public_network_access: enabled
+resourceGroup: AiMethica-ML
+scoring_uri: https://weekly-company-income.westeurope.inference.ml.azure.com/score
+tags: {}
+traffic:
+  cleverhand7yb3c269-1: 100

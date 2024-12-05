@@ -1,0 +1,30 @@
+{
+  "auth_mode": "key",
+  "description": "Price sensitivity endpoint, which predicts the company main KPIs based on different products prices.",
+  "id": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/price-sensitivity",
+  "identity": {
+    "principal_id": "74c36ef6-1ad1-4ad3-967a-ed36b9f5a2d9",
+    "tenant_id": "214ea6ae-b24f-4306-b3a4-e32342fa5dfc",
+    "type": "system_assigned"
+  },
+  "kind": "Managed",
+  "location": "westeurope",
+  "mirror_traffic": {},
+  "name": "price-sensitivity",
+  "openapi_uri": "https://price-sensitivity.westeurope.inference.ml.azure.com/swagger.json",
+  "properties": {
+    "AzureAsyncOperationUri": "https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:f74ff3a5-d44f-423e-9492-3909ba678640?api-version=2022-02-01-preview",
+    "azureml.onlineendpointid": "/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/price-sensitivity",
+    "createdAt": "2024-10-16T14:51:02.629765+0000",
+    "createdBy": "Ionut Alexandru Popescu",
+    "lastModifiedAt": "2024-10-16T14:51:02.629765+0000"
+  },
+  "provisioning_state": "Succeeded",
+  "public_network_access": "enabled",
+  "resourceGroup": "AiMethica-ML",
+  "scoring_uri": "https://price-sensitivity.westeurope.inference.ml.azure.com/score",
+  "tags": {},
+  "traffic": {
+    "tff-blue": 0
+  }
+}

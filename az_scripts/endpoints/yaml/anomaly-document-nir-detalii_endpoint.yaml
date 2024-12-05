@@ -1,0 +1,25 @@
+auth_mode: key
+description: Anomaly detection model for the DOCUMENT NIR DETALII dataset.
+id: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourceGroups/AiMethica-ML/providers/Microsoft.MachineLearningServices/workspaces/AiMethica-AZML/onlineEndpoints/anomaly-document-nir-detalii
+identity:
+  principal_id: 01c7e579-d8ae-48f1-9e63-36a7b17c3fbd
+  tenant_id: 214ea6ae-b24f-4306-b3a4-e32342fa5dfc
+  type: system_assigned
+kind: Managed
+location: westeurope
+mirror_traffic: {}
+name: anomaly-document-nir-detalii
+openapi_uri: https://anomaly-document-nir-detalii.westeurope.inference.ml.azure.com/swagger.json
+properties:
+  AzureAsyncOperationUri: https://management.azure.com/subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/providers/Microsoft.MachineLearningServices/locations/westeurope/mfeOperationsStatus/oeidp:def84eb2-d667-4eb4-8f9a-70505c89c4e3:d1b32dc7-c755-4591-8509-d48398d78665?api-version=2022-02-01-preview
+  azureml.onlineendpointid: /subscriptions/9107822e-69ab-454f-a905-b59c4e15c1af/resourcegroups/aimethica-ml/providers/microsoft.machinelearningservices/workspaces/aimethica-azml/onlineendpoints/anomaly-document-nir-detalii
+  createdAt: 2024-09-22T11:13:16.010040+0000
+  createdBy: Ionut Alexandru Popescu
+  lastModifiedAt: 2024-09-22T11:13:16.010040+0000
+provisioning_state: Succeeded
+public_network_access: enabled
+resourceGroup: AiMethica-ML
+scoring_uri: https://anomaly-document-nir-detalii.westeurope.inference.ml.azure.com/score
+tags: {}
+traffic:
+  tff-blue: 0
