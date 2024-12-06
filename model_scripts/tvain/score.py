@@ -63,31 +63,6 @@ if __name__ == "__main__":
   
   init()
   
-  endpoint_data = {
-  "startDateWeek": "2024-12-02 00:00:00",
-  "idFirma": 114,
-  "denumireFirma": "CLOUD ACCOUNTING SRL",
-  "saptamanaW1": 459088.69,
-  "saptamanaW1W4": 1919241.64,
-  "saptamanaW1W12": 5766925.09,
-  "saptamanaW1W52": 24157681.17,
-  "saptamanaW53": 439931.23,
-  "saptamanaW53W56": 1836753.4,
-  "saptamanaW53W64": 5561803.84,
-  "saptamanaW53W104": 23248200.08,
-  "saptamanaW2": 486239.27,
-  "saptamanaW3": 490614.88,
-  "saptamanaW4": 483298.8,
-  "saptamanaW5": 480109.04,
-  "saptamanaW6": 485780.79,
-  "saptamanaW7": 487067.98,
-  "saptamanaW8": 482020.77,
-  "saptamanaW9": 477480.79,
-  "saptamanaW10": 480303.95,
-  "saptamanaW11": 479874.81,
-  "saptamanaW12": 475045.32
-}
-  
   data = {
     "input_data": {
       "columns": [
@@ -104,10 +79,42 @@ if __name__ == "__main__":
     }
   }
   
+    
+  endpoint_data = {
+    "startDateWeek": "2024-12-02 00:00:00",
+    "idFirma": 114,
+    "denumireFirma": "CLOUD ACCOUNTING SRL",
+    "saptamanaW1": 459088.69,
+    "saptamanaW1W4": 1919241.64,
+    "saptamanaW1W12": 5766925.09,
+    "saptamanaW1W52": 24157681.17,
+    "saptamanaW53": 439931.23,
+    "saptamanaW53W56": 1836753.4,
+    "saptamanaW53W64": 5561803.84,
+    "saptamanaW53W104": 23248200.08,
+    "saptamanaW2": 486239.27,
+    "saptamanaW3": 490614.88,
+    "saptamanaW4": 483298.8,
+    "saptamanaW5": 480109.04,
+    "saptamanaW6": 485780.79,
+    "saptamanaW7": 487067.98,
+    "saptamanaW8": 482020.77,
+    "saptamanaW9": 477480.79,
+    "saptamanaW10": 480303.95,
+    "saptamanaW11": 479874.81,
+    "saptamanaW12": 475045.32
+  }
+  
+  endpoint_data_expected = [463342.73307742784]
+  
+  
   data = from_endpoint(endpoint_data)
 
   
   result = run(data)
-  print(result)
+  print("Expected: ", endpoint_data_expected)
+  print("Model:    ", result)
+  
+  assert result == endpoint_data_expected
   
   

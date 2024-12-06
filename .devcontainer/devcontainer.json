@@ -1,13 +1,13 @@
 {
   "name" : "Azure models running environment",
-  "image" : "aidamian/azureml-dev-slim",
-  // "dockerFile" : "Dockerfile",
+  // "image" : "aidamian/azureml-dev-slim",
+  "dockerFile" : "Dockerfile",
 
   "runArgs" : [
     "--hostname", "az-models"
   ],
 
-
+  
   "customizations": {
     "vscode" : {
       "extensions": [

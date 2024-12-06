@@ -65,32 +65,6 @@ if __name__ == "__main__":
   
   init()
   
-  endpoint_data = {
-  "startDateWeek": "2024-12-02 00:00:00",
-  "idFirma": 114,
-  "denumireFirma": "CLOUD ACCOUNTING SRL",
-  "categorieVenit": "VENITURI",
-  "saptamanaW1": 2416256.24,
-  "saptamanaW1W4": 10101271.79,
-  "saptamanaW1W12": 30352237.32,
-  "saptamanaW1W52": 127145690.39,
-  "saptamanaW53": 2315427.54,
-  "saptamanaW53W56": 9667123.15,
-  "saptamanaW53W64": 29272651.8,
-  "saptamanaW53W104": 122358947.79,
-  "saptamanaW2": 2559154.06,
-  "saptamanaW3": 2582183.59,
-  "saptamanaW4": 2543677.9,
-  "saptamanaW5": 2526889.71,
-  "saptamanaW6": 2556741.02,
-  "saptamanaW7": 2563515.67,
-  "saptamanaW8": 2536951.42,
-  "saptamanaW9": 2513056.77,
-  "saptamanaW10": 2527915.52,
-  "saptamanaW11": 2525656.87,
-  "saptamanaW12": 2500238.55
-}
-  
   data = {
     "input_data": {
       "columns": [
@@ -104,12 +78,43 @@ if __name__ == "__main__":
         ["2024-10-07 00:00:00.000",114,"CLOUD ACCOUNTING SRL","VENITURI",2513056.77,10066867.71,30319648.91,126353267.57,2437677.95,9779705.01,29282299.33,121664940.05]
       ]
     }
+  }  
+  
+  endpoint_data = {
+    "startDateWeek": "2024-12-02 00:00:00",
+    "idFirma": 114,
+    "denumireFirma": "CLOUD ACCOUNTING SRL",
+    "categorieVenit": "VENITURI",
+    "saptamanaW1": 2416256.24,
+    "saptamanaW1W4": 10101271.79,
+    "saptamanaW1W12": 30352237.32,
+    "saptamanaW1W52": 127145690.39,
+    "saptamanaW53": 2315427.54,
+    "saptamanaW53W56": 9667123.15,
+    "saptamanaW53W64": 29272651.8,
+    "saptamanaW53W104": 122358947.79,
+    "saptamanaW2": 2559154.06,
+    "saptamanaW3": 2582183.59,
+    "saptamanaW4": 2543677.9,
+    "saptamanaW5": 2526889.71,
+    "saptamanaW6": 2556741.02,
+    "saptamanaW7": 2563515.67,
+    "saptamanaW8": 2536951.42,
+    "saptamanaW9": 2513056.77,
+    "saptamanaW10": 2527915.52,
+    "saptamanaW11": 2525656.87,
+    "saptamanaW12": 2500238.55
   }
+  
+  endpoint_data_expected = [2442085.9741508453]
   
   data = from_endpoint(endpoint_data)
 
   
   result = run(data)
-  print(result)
+  print("Expected: ", endpoint_data_expected)
+  print("Model:    ", result)
+  
+  assert result == endpoint_data_expected
   
   
