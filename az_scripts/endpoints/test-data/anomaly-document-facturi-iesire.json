@@ -1,0 +1,5 @@
+{
+    "request": {"date":"{\"data\":[[3176,1,177,false,1,1,\"2024-09-24T00:00:00.000Z\",2000,380,2380,0,138,189,false,false,false,3175,null],[3162,1,177,false,1,1,\"2024-09-01T00:00:00.000Z\",10000,1900,11900,0,138,189,false,false,false,3161,null]]}","codTipDocument":"FACT_OUT"}
+    ,
+    "response": ["{\"response\":false","true}"]
+}

@@ -1,0 +1,5 @@
+{
+    "request": {"date":"{\"data\":[[3198,1,177,138,1,\"2024-09-24T00:00:00.000Z\",150,28.5,178.5,1,null,null,null,null,0,null,null],[3196,1,179,140,1,\"2024-10-31T00:00:00.000Z\",150,28.5,178.5,1,null,null,null,false,0,false,false],[3194,1,177,138,1,\"2024-10-09T00:00:00.000Z\",500,95,595,1,null,null,null,false,0,false,false],[3190,1,179,140,1,\"2024-10-11T00:00:00.000Z\",98.85,18.78,117.63,1,null,null,null,null,0,null,null],[3157,1,177,138,0,\"2024-09-23T00:00:00.000Z\",10000,1900,11900,1,null,null,null,null,0,null,null]]}","codTipDocument":"FACT_IN"}
+    ,
+    "response": ["{\"response\":false","false","false","false","false}"]
+}

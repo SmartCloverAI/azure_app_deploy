@@ -1,0 +1,5 @@
+{
+    "request": {"idArticol":104,"idCategorie":19,"idFirma":114,"startDateWeek":"2024-12-02T00:00:00.000Z","pretUnitar":30.76,"denumireProducator":"PRODUCATOR14","procTVA":19,"procentDiscount":21,"saptamanaW1":2782,"saptamanaW1W4":9341,"saptamanaW1W12":26907,"saptamanaW1W52":117208,"saptamanaW53":2472,"saptamanaW53W56":8649,"saptamanaW53W64":25682,"saptamanaW53W104":115452,"stocW1":285,"stocW2":393,"stocM1":285,"saptamanaW2":393,"saptamanaW3":374,"saptamanaW4":398,"saptamanaW5":389,"saptamanaW6":371,"saptamanaW7":373,"saptamanaW8":359,"saptamanaW9":387,"saptamanaW10":381,"saptamanaW11":381,"saptamanaW12":401}
+    ,
+    "response": 287.4335483155523
+}

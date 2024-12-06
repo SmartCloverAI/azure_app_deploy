@@ -1,0 +1,5 @@
+{
+    "request": {"date":"{\"data\":[[4742,3197,4741,29,150,15,1,1,null,150,28.5,38,\"test\",\"2024-09-27T00:00:00.000Z\",null],[4671,3166,4670,29,150,15,1,1,null,150,28.5,38,null,null,null],[4661,3156,4660,29,1000,15,10,10,null,10000,1900,38,null,null,null]]}","codTipDocument":"NIR_DETALII"}
+    ,
+    "response":["{\"response\":true","true","true}"]
+}
