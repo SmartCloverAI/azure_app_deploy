@@ -2,6 +2,7 @@ version: '3'
 services:
   azure-mlflow:
     image: aidamian/azureml-dev-slim
+    hostname: azure-mlflow
     volumes:
       # Mount the root folder that contains .git
       - .:/workspace:cached
@@ -10,6 +11,7 @@ services:
 
   azure-tf:
     image: aidamian/azureml-dev-tf
+    hostname: azure-tf
     volumes:
       # Mount the root folder that contains .git
       - .:/workspace:cached
