@@ -1,0 +1,17 @@
+{
+  "name": "Azure TF Dev Container",
+  "dockerComposeFile": ["../../docker-compose.yml"],
+  "service": "azure-tf",
+ 
+  "customizations": {
+    "vscode" : {
+      "extensions": [
+        "ms-python.python",
+        "ms-toolsai.jupyter"
+      ]
+    }
+  },
+
+  // "shutdownAction": "none",
+  "workspaceFolder": "/workspace/"
+}

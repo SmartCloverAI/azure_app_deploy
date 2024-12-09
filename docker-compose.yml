@@ -1,0 +1,17 @@
+version: '3'
+services:
+  azure-mlflow:
+    image: aidamian/azureml-dev-slim
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: sleep infinity
+    # ...
+
+  azure-tf:
+    image: aidamian/azureml-dev-tf
+    volumes:
+      # Mount the root folder that contains .git
+      - .:/workspace:cached
+    command: sleep infinity
+    # ...

@@ -4,7 +4,7 @@ FROM python:3.9.19
 # Set the working directory
 WORKDIR /workspace
 
-COPY requirements.txt .
+COPY requirements_azureml.txt .
 
 # Install system dependencies required for some Python packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -15,7 +15,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install the SDK requirements
-RUN pip install -r requirements.txt
+RUN pip install -r requirements_azureml.txt
     
 
 # Set the default command to bash (optional)
