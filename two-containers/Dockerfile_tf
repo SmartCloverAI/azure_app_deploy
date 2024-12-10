@@ -1,0 +1,11 @@
+FROM aidamian/azureml-dev-tf
+
+WORKDIR /app
+
+COPY ./src .
+COPY ./azure-tf/src .
+COPY ./azure-tf/models ./models
+
+ENV SERVING_ENV_VERSION=serve-tf-0.1.1
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5052"]

@@ -1,2 +1,0 @@
-docker build -t aidamian/azureml-dev-slim -f Dockerfile_azureml .
-docker push aidamian/azureml-dev-slim

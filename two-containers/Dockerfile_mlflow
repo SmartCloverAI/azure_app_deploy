@@ -1,0 +1,11 @@
+FROM aidamian/azureml-dev-slim
+
+WORKDIR /app
+
+COPY ./src .
+COPY ./azure-ml/src .
+COPY ./azure-ml/models ./models
+
+ENV SERVING_ENV_VERSION=serve-mlflow-0.1.1
+
+CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5051"]

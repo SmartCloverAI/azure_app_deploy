@@ -1,0 +1,12 @@
+services:
+  azure-mlflow:
+    image: aidamian/azure-mlflow-test
+    hostname: azure-mlflow
+    ports:
+      - "5051:5051"
+
+  azure-tf:
+    image: aidamian/azure-tf-test
+    hostname: azure-tf
+    ports:
+      - "5052:5052"
