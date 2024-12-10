@@ -32,14 +32,17 @@ def preprocess(data):
     index = data["input_data"]["index"]
     data = data["input_data"]["data"]
     df = pd.DataFrame(data, columns=columns, index=index)
+    
   elif isinstance(data, pd.DataFrame):
     df = data
+  
   df = df[COLUMNS]
   return df
     
 def run(data):
-  log_with_color("Running serving function", color="b")
+  log_with_color("Running preprocess", color="d")
   df = preprocess(data)
+  log_with_color("Running forecast", color="d")
   result = model.forecast(df)
   return result[0].tolist()
   
