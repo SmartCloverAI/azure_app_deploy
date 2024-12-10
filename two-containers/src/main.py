@@ -33,8 +33,9 @@ async def predict(request: Request):
   try:
     log_with_color("Received predict request", color="b")
     request_json = await request.body()
+    request_json = str(request_json, "utf-8")
     # Preprocess and predict
-    log_with_color("Executing run on {}:\n{}".format(type(request_json), json.dumps(request_json)), color="b")
+    log_with_color("Executing run on {}:\n{}".format(type(request_json), request_json), color="b")
     result = run(request_json)
     return result
   except Exception as e:
