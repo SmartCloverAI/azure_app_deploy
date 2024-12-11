@@ -1,0 +1,1 @@
+az group create --name AiMethica-ML-Slim --location westeurope
