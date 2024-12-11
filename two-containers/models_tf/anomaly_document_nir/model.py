@@ -6,7 +6,6 @@ import os
 
 import tensorflow as tf
 
-from utils import log_with_color
 
 os.environ['TF_CPP_MIN_LOG_LEVEL'] = '3' 
 
@@ -27,7 +26,7 @@ def preparing_inference_df(request_inference_data, training_columns):
 
   return inference_data_df
 
-def init():
+def init(**kwargs):
   global autoencoder_loaded_score
   global training_results_score
   global training_scaler_score
@@ -38,7 +37,6 @@ def init():
 
   model_file = "autoencoder_DOCUMENTE_NIR.keras"
 
-  log_with_color(f"Loading model {model_file} and training specs...", color="y")
 
   with open(os.path.join(root,model_folder, "training_results.pkl"), 'rb') as file: 
     training_results_score = pickle.load(file) 
@@ -51,7 +49,6 @@ def init():
 
   autoencoder_loaded_score = tf.keras.models.load_model(os.path.join(root,model_folder, model_file))
   
-  log_with_color("Model and training results loaded.", color="g")
   return
 
 def run(raw_data):

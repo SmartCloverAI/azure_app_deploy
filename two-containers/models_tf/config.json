@@ -1,0 +1,8 @@
+[
+  {
+    "name": "tf_anomaly_document_nir",
+    "description": "Naive DL model for NIR document anomaly detection",
+    "folder" : "./models/anomaly_document_nir",
+    "script_file": "model.py"
+  }
+]

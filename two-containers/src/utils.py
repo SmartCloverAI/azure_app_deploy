@@ -1,6 +1,9 @@
 from datetime import datetime
 
-from config import APP_NAME
+import os
+
+APP_NAME = os.environ.get("AIMETHICA_APP_NAME", "unk")
+ENV_VERSION = os.environ.get("SERVING_ENV_VERSION", "dev")
 
 def log_with_color(message, color="d", test=False):
   """

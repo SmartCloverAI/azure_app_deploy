@@ -6,5 +6,6 @@ COPY ./src .
 COPY ./models_tf ./models
 
 ENV SERVING_ENV_VERSION=serve-tf-0.1.1
+ENV AIMETHICA_APP_NAME=tfsrv
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5052"]
