@@ -3,7 +3,6 @@
     "name": "mflow_tvain",
     "folder" : "./models/tvain",
     "description": "MLFlow model for incoming TVA",
-    "model_file" : "model.pkl",
-    "script_file": "model.py"
+    "model_file" : "model.pkl"
   }
 ]

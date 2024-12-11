@@ -146,7 +146,7 @@ class ModelsHandler:
       folder = model_info.get("folder")
       if model_name is None:
         continue
-      script_file = model_info.get("script_file", "model.py")
+      script_file = model_info.get("script_file", None)
       model_file = model_info.get("model_file", None)
       if model_file is not None:
         # check if full path
@@ -157,12 +157,17 @@ class ModelsHandler:
         if not os.path.exists(model_file):
           raise FileNotFoundError(f"Model file {model_file} not found.")
       
-      script_file = os.path.join(folder, script_file)
+      if script_file is None:
+        script_file = "./models/model.py" # default universal file
+      else:
+        script_file = os.path.join(folder, script_file)
 
       loader = ModelLoader(
         model_name=model_name, script_file=script_file, model_file=model_file
       )
       loader.init()
+      if hasattr(loader, "model"):
+        log_with_color(f"Model `{model_name.__class__.__name__}` loaded successfully.", color="g")
       self.models[model_name] = loader
     return
 
