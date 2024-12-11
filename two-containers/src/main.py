@@ -53,4 +53,6 @@ for model_name in models_handler.models.keys():
     return result
   log_with_color(f"Creating endpoint for model {model_name}", color="b")
   # Register the endpoint with FastAPI
-  app.post(f"/{model_name}")(endpoint_func)
+  str_endpoint = f"/{model_name}"
+  app.post(str_endpoint)(endpoint_func)
+  log_with_color(f"Created endpoint {str_endpoint}", color="g")
