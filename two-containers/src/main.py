@@ -5,7 +5,7 @@ import json
 from fastapi import FastAPI, HTTPException, Request
 from pydantic import BaseModel
 
-from config import APP_NAME
+from config import MODELS
 from utils import log_with_color
 
 from model import init, run

@@ -1,1 +1,0 @@
-APP_NAME = "anomaly_document_nir"

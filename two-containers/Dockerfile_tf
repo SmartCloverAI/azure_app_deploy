@@ -3,8 +3,7 @@ FROM aidamian/azureml-dev-tf
 WORKDIR /app
 
 COPY ./src .
-COPY ./azure-tf/src .
-COPY ./azure-tf/models ./models
+COPY ./models_tf ./models
 
 ENV SERVING_ENV_VERSION=serve-tf-0.1.1
 
