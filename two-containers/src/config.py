@@ -17,8 +17,12 @@ class ModelLoader:
   ----------
   model_name : str
     The name of the model folder to load.
+    
   script_file : str
     The name of the python file (e.g. 'model.py', 'score.py') where init() and run() are defined.
+    
+  model_file : str
+    The path to the model file to load within the `init` function (will be passed as `model_file`).
 
   Attributes
   ----------
@@ -50,8 +54,19 @@ class ModelLoader:
     Dynamically import the specified module file from the corresponding model folder
     and bind the init and run functions.
     """
-    module_name = os.path.splitext(self.script_file)[0]  # remove .py if present
-    model_path = module_name.replace(".","").replace("/",".")
+    model_path = os.path.splitext(self.script_file)[0]  # remove .py if present
+    # Remove leading './' if present
+    if model_path.startswith("./"):
+        model_path = model_path[2:]
+    # Remove leading '/' if present
+    elif model_path.startswith("/"):
+        model_path = model_path[1:]
+
+    # Replace '/' with '.' to get the module import path
+    # e.g. "models/something/script" -> "models.something.script"
+    #      "model/scripts/test" -> "model.scripts.test"
+    model_path = model_path.replace("/", ".")
+    
     log_with_color(f"Loading script {model_path} from {self.script_file}", color="b")    
     self.model_module = importlib.import_module(model_path)
     if not hasattr(self.model_module, "init") or not hasattr(self.model_module, "run"):
@@ -147,7 +162,7 @@ class ModelsHandler:
       loader = ModelLoader(
         model_name=model_name, script_file=script_file, model_file=model_file
       )
-      loader.init(model_file=model_file)
+      loader.init()
       self.models[model_name] = loader
     return
 
