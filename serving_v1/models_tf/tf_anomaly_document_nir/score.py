@@ -26,14 +26,14 @@ def preparing_inference_df(request_inference_data, training_columns):
 
   return inference_data_df
 
-def init(**kwargs):
+def init():
   global autoencoder_loaded_score
   global training_results_score
   global training_scaler_score
   global training_OH_encoder_score
 
   root = "models"
-  model_folder = "anomaly_document_nir"
+  model_folder = "tf_anomaly_document_nir"
 
   model_file = "autoencoder_DOCUMENTE_NIR.keras"
 
@@ -71,6 +71,7 @@ def run(raw_data):
 
     response['response'] = inference_results.tolist()
     response['values'] = inference_train_loss_anomaly.numpy().round(3).tolist()
+    response['threshold'] = inference_threshold
 
     return response
       

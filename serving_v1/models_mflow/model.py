@@ -13,13 +13,12 @@ import azureml
 
 
 def init(model_file=None, **kwargs):
-  global model
-  
+ 
   assert model_file is not None, "Model file is required"
   
   with open(model_file, "rb") as f:
     model = pickle.load(f)
-  return
+  return model
 
 def preprocess(data):
   if isinstance(data, str):
@@ -36,7 +35,7 @@ def preprocess(data):
   
   return df
     
-def run(data):
+def run(data, model):
   df = preprocess(data)
   result = model.forecast(df)
   return result[0].tolist()

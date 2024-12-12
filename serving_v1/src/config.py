@@ -44,6 +44,7 @@ class ModelLoader:
     self.script_file = script_file
     self.model_module = None
     self.model_file = model_file
+    self.model = None # maybe we need to cache this
     self.init_fn = None
     self.run_fn = None
     self._load_model()
@@ -78,12 +79,19 @@ class ModelLoader:
 
   def init(self):
     """
-    Initialize the model by calling its init function.
+    Initialize the model by calling its init function that can or cannot return a model instance.
     """
     log_with_color(f"Initializing model <{self.model_name}> with {self.model_file}", color="b")
-    self.init_fn(model_file=self.model_file)
+    if self.model_file is None:
+      log_with_color(f"Initializing model <{self.model_name}> without model file.", color="y")
+      model = self.init_fn()
+    else:
+      log_with_color(f"Initializing model <{self.model_name}> with model file {self.model_file}.", color="y")
+      model = self.init_fn(model_file=self.model_file)
     log_with_color(f"Initialized model <{self.model_name}>.", color="g")
-    return
+    if model is not None:
+      self.model = model
+    return  
 
   def run(self, request_data):
     """
@@ -99,8 +107,12 @@ class ModelLoader:
     Any
       The result of the model's run function.
     """
-    log_with_color(f"Running model {self.model_name}", color="d")
-    return self.run_fn(request_data)
+    if self.model is None:
+      log_with_color(f"Running script based model {self.model_name}", color="d")
+      return self.run_fn(request_data)
+    else:
+      log_with_color(f"Running model {self.model_name}", color="d")
+      return self.run_fn(request_data, model=self.model)
 
 
 class ModelsHandler:

@@ -48,8 +48,9 @@ for model_name in models_handler.models.keys():
     try:
       result = model.run(request_data)
     except Exception as e:
-      log_with_color(f"Failed to run model {model_name}", color="r")
-      raise HTTPException(status_code=404, detail=f"Model {model_name} not found")
+      msg = f"Run model exception: {e}"
+      log_with_color(msg, color="r")
+      raise HTTPException(status_code=500, detail=msg)
     return result
   log_with_color(f"Creating endpoint for model {model_name}", color="b")
   # Register the endpoint with FastAPI

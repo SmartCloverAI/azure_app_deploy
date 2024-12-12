@@ -1,0 +1,23 @@
+[
+  {
+    "name": "tf_anomaly_document_nir",
+    "description": "Naive DL model for NIR document anomaly detection",
+    "folder" : "./models/tf_anomaly_document_nir",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_facturi_export",
+    "description": "Naive DL model for export invoice anomaly detection",
+    "folder" : "./models/tf_facturi_export",
+    "script_file": "model.py"
+  },
+
+  {
+    "name": "tf_price",
+    "description": "Naive DL model for price sensitivity analysis",
+    "folder" : "./models/tf_price",
+    "script_file": "score.py"
+  }
+
+]

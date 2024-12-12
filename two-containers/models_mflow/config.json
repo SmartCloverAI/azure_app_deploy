@@ -1,8 +1,0 @@
-[
-  {
-    "name": "mflow_tvain",
-    "folder" : "./models/tvain",
-    "description": "MLFlow model for incoming TVA",
-    "model_file" : "model.pkl"
-  }
-]
