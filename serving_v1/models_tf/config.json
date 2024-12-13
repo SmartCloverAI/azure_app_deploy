@@ -1,22 +1,70 @@
 [
   {
-    "name": "tf_anomaly_document_nir",
-    "description": "Naive DL model for NIR document anomaly detection",
-    "folder" : "./models/tf_anomaly_document_nir",
-    "script_file": "score.py"
-  },
-
-  {
-    "name": "tf_facturi_export",
+    "name": "tf_anomaly_facturi_export_v1",
     "description": "Naive DL model for export invoice anomaly detection",
-    "folder" : "./models/tf_facturi_export",
+    "folder" : "./models/tf_anomaly_facturi_export",
     "script_file": "model.py"
   },
 
   {
-    "name": "tf_price",
+    "name": "tf_anomaly_facturi_iesire_v1",
+    "description": "Naive DL model for outbound invoice anomaly detection",
+    "folder" : "./models/tf_anomaly_facturi_iesire",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_anomaly_facturi_import_v1",
+    "description": "Naive DL model for import invoice anomaly detection",
+    "folder" : "./models/tf_anomaly_facturi_import",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_anomaly_facturi_intrare_v1",
+    "description": "Naive DL model for inbound invoice anomaly detection",
+    "folder" : "./models/tf_anomaly_facturi_intrare",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_anomaly_nir_v1",
+    "description": "Naive DL model for NIR document anomaly detection",
+    "folder" : "./models/tf_anomaly_nir",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_anomaly_nir_detalii_v1",
+    "description": "Naive DL model for NIR details document anomaly detection",
+    "folder" : "./models/tf_anomaly_nir_detalii",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_anomaly_ordine_incasare_v1",
+    "description": "Naive DL model for caching order anomaly detection",
+    "folder" : "./models/tf_anomaly_ordine_incasare",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_anomaly_ordine_plata_v1",
+    "description": "Naive DL model for payment order anomaly detection",
+    "folder" : "./models/tf_anomaly_ordine_plata",
+    "script_file": "score.py"
+  },
+
+  {
+    "name": "tf_price_sensitivity_v1",
     "description": "Naive DL model for price sensitivity analysis",
-    "folder" : "./models/tf_price",
+    "folder" : "./models/tf_price_sensitivity",
+    "script_file": "score.py"
+  },
+  {
+    "name": "tf_quantity_sensitivity_v1",
+    "description": "Naive DL model for quantity sensitivity analysis",
+    "folder" : "./models/tf_quantity_sensitivity",
     "script_file": "score.py"
   }
 

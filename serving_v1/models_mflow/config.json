@@ -1,14 +1,50 @@
 [
   {
-    "name": "mflow_tvain",
-    "folder" : "./models/mflow_tvain",
+    "name": "mflow_clf_income_expenditure_v1",
+    "folder" : "./models/mflow_clf_income_expenditure",
+    "description": "MLFlow model for clasification of income and expenditure",
+    "model_file" : "model.pkl"
+  },
+  {
+    "name": "mflow_weekly_cashflow_v1",
+    "folder" : "./models/mflow_weekly_cashflow",
+    "description": "MLFlow model for weekly cashflow",
+    "model_file" : "model.pkl"
+  },
+  {
+    "name": "mflow_weekly_expenditure_v1",
+    "folder" : "./models/mflow_weekly_expenditure",
+    "description": "MLFlow model for weekly expenditure",
+    "model_file" : "model.pkl"
+  },
+  {
+    "name": "mflow_weekly_income_v1",
+    "folder" : "./models/mflow_weekly_income",
+    "description": "MLFlow model for weekly income",
+    "model_file" : "model.pkl"
+  },
+  {
+    "name": "mflow_weekly_product_sale_v1",
+    "folder" : "./models/mflow_weekly_product_sale",
+    "description": "MLFlow model for weekly product sale",
+    "model_file" : "model.pkl"
+  },
+  {
+    "name": "mflow_weekly_product_stocks_v1",
+    "folder" : "./models/mflow_weekly_product_stocks",
+    "description": "MLFlow model for weekly product stocks",
+    "model_file" : "model.pkl"
+  },
+  {
+    "name": "mflow_weekly_tvain_v1",
+    "folder" : "./models/mflow_weekly_tvain",
     "description": "MLFlow model for incoming TVA",
     "model_file" : "model.pkl"
   },
   {
-    "name": "mflow_cashflow",
-    "folder" : "./models/mflow_cashflow",
-    "description": "MLFlow model for weekly cashflow",
+    "name": "mflow_weekly_tvaout_v1",
+    "folder" : "./models/mflow_weekly_tvaout",
+    "description": "MLFlow model for outgoing TVA",
     "model_file" : "model.pkl"
   }
 ]
