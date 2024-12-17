@@ -1,7 +1,7 @@
 {
   "name": "Azure MLFlow Dev Container",
   "dockerComposeFile": ["../../docker-compose.yml"],
-  "service": "azure-mlflow",
+  "service": "devcontainer-mlflow",
 
  
   "customizations": {
