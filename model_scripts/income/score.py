@@ -15,7 +15,7 @@ def init():
     'SAPTAMANA_W1_W52', 'SAPTAMANA_W53_W64'
   ]
   
-  MODEL = "models/income/model.pkl"
+  MODEL = "models/mflow_weekly_income/model.pkl"
   with open(MODEL, "rb") as f:
     model = pickle.load(f)
   print(model)

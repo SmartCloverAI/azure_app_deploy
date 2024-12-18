@@ -6,6 +6,7 @@ This is the universal model file!
 
 import json
 import pickle
+import numpy as np
 import pandas as pd
 
 import azureml
@@ -31,12 +32,20 @@ def preprocess(data):
     df = pd.DataFrame(data, columns=columns, index=index)
     
   elif isinstance(data, pd.DataFrame):
-    df = data
-  
+    df = data  
   return df
+    
     
 def run(data, model):
   df = preprocess(data)
-  result = model.forecast(df)
-  return result[0].tolist()
-  
+  if hasattr(model, "forecast"):
+    result = model.forecast(df)  
+  elif hasattr(model, "predict"):
+    result = model.predict(df)
+  else:
+    msg = f"Model {model} does not have a predict method"
+    raise ValueError(msg)
+  if isinstance(result, np.ndarray):
+    return result.tolist()
+  else:
+    return result[0].tolist()
