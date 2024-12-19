@@ -1,0 +1,307 @@
+{
+  "cells": [
+    {
+      "cell_type": "code",
+      "source": [
+        "from azure.ai.ml import MLClient\n",
+        "from azure.ai.ml.entities import (\n",
+        "    ManagedOnlineEndpoint,\n",
+        "    ManagedOnlineDeployment,\n",
+        "    Model,\n",
+        "    Environment,\n",
+        "    CodeConfiguration,\n",
+        ")\n",
+        "from azure.identity import DefaultAzureCredential, InteractiveBrowserCredential, ManagedIdentityCredential"
+      ],
+      "outputs": [],
+      "execution_count": 2,
+      "metadata": {
+        "gather": {
+          "logged": 1726743047486
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "subscription_id = \"9107822e-69ab-454f-a905-b59c4e15c1af\"\n",
+        "resource_group = \"AiMethica-ML\"\n",
+        "workspace = \"AiMethica-AZML\""
+      ],
+      "outputs": [],
+      "execution_count": 3,
+      "metadata": {
+        "gather": {
+          "logged": 1726743048815
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ml_client = MLClient(\n",
+        "    DefaultAzureCredential(), subscription_id, resource_group, workspace\n",
+        ")"
+      ],
+      "outputs": [],
+      "execution_count": 4,
+      "metadata": {
+        "gather": {
+          "logged": 1726743051056
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ws = ml_client.workspaces.get(workspace)\n",
+        "print(ws.location, \":\", ws.resource_group)"
+      ],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "westeurope : AiMethica-ML\n"
+        }
+      ],
+      "execution_count": 5,
+      "metadata": {
+        "gather": {
+          "logged": 1726743053730
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "custom_env_name = 'aimethica-anomaly-env'\n",
+        "job_name = 'lemon_yuca_ycfygtjw4f'\n",
+        "env_name = custom_env_name + \"@latest\""
+      ],
+      "outputs": [],
+      "execution_count": 6,
+      "metadata": {
+        "gather": {
+          "logged": 1726743055418
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "from azure.ai.ml.entities import Model\n",
+        "\n",
+        "model = Model(\n",
+        "    # the script stores the model as \"model\"\n",
+        "    path=f\"azureml://jobs/{job_name}/outputs/artifacts/paths/outputs/\",\n",
+        "    name=\"anomaly_document_facturi_export\",\n",
+        "    description=\"Anomaly detection model for the DOCUMENT FACTURI EXPORT dataset.\",\n",
+        "    type=\"custom_model\"\n",
+        ")"
+      ],
+      "outputs": [],
+      "execution_count": 7,
+      "metadata": {
+        "gather": {
+          "logged": 1726743057546
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "registered_model = ml_client.models.create_or_update(model=model)"
+      ],
+      "outputs": [],
+      "execution_count": 8,
+      "metadata": {
+        "gather": {
+          "logged": 1726743061029
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "online_endpoint_name = \"anomaly-document-facturi-export\""
+      ],
+      "outputs": [],
+      "execution_count": 9,
+      "metadata": {
+        "gather": {
+          "logged": 1726743062837
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# create an online endpoint\n",
+        "endpoint = ManagedOnlineEndpoint(\n",
+        "    name=online_endpoint_name,\n",
+        "    description=\"Anomaly detection model for the DOCUMENT FACTURI EXPORT dataset.\",\n",
+        "    auth_mode=\"key\"\n",
+        ")\n",
+        "\n",
+        "endpoint = ml_client.begin_create_or_update(endpoint).result()\n",
+        "\n",
+        "print(f\"Endpint {endpoint.name} provisioning state: {endpoint.provisioning_state}\")"
+      ],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "Endpint anomaly-document-facturi-export provisioning state: Succeeded\n"
+        }
+      ],
+      "execution_count": 10,
+      "metadata": {
+        "gather": {
+          "logged": 1726743096147
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "model_name = registered_model.name + '@latest'\n",
+        "\n",
+        "blue_deployment = ManagedOnlineDeployment(\n",
+        "    name=\"tff-blue\",\n",
+        "    endpoint_name=online_endpoint_name,\n",
+        "    model=model_name,\n",
+        "    code_configuration=CodeConfiguration(code=\"./src\", scoring_script=\"score.py\"),\n",
+        "    environment=env_name,\n",
+        "    instance_type=\"Standard_DS1_v2\",\n",
+        "    instance_count=1,\n",
+        ")"
+      ],
+      "outputs": [],
+      "execution_count": 20,
+      "metadata": {
+        "gather": {
+          "logged": 1726750940421
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "blue_deployment = ml_client.begin_create_or_update(blue_deployment)"
+      ],
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stderr",
+          "text": "Instance type Standard_DS1_v2 may be too small for compute resources. Minimum recommended compute SKU is Standard_DS3_v2 for general purpose endpoints. Learn more about SKUs here: https://learn.microsoft.com/en-us/azure/machine-learning/referencemanaged-online-endpoints-vm-sku-list\nCheck: endpoint anomaly-document-facturi-export exists\n\u001b[32mUploading src (0.01 MBs): 100%|██████████| 9415/9415 [00:00<00:00, 177898.49it/s]\n\u001b[39m\n\n"
+        },
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": "."
+        }
+      ],
+      "execution_count": 21,
+      "metadata": {
+        "gather": {
+          "logged": 1726750946677
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import os\n",
+        "os.path.abspath(os.getcwd())"
+      ],
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "execution_count": 25,
+          "data": {
+            "text/plain": "'/mnt/batch/tasks/shared/LS_root/mounts/clusters/aimethica-general/code/Users/alexandru.popescu/anomaly_DOCUMENTE_FACTURI_EXPORT'"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 25,
+      "metadata": {
+        "jupyter": {
+          "source_hidden": false,
+          "outputs_hidden": false
+        },
+        "nteract": {
+          "transient": {
+            "deleting": false
+          }
+        },
+        "gather": {
+          "logged": 1726768624917
+        }
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "ml_client.online_endpoints.invoke(\n",
+        "    endpoint_name=online_endpoint_name,\n",
+        "    deployment_name=\"tff-blue\",\n",
+        "    request_file=\"anomaly_request.json\"\n",
+        ")"
+      ],
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "execution_count": 23,
+          "data": {
+            "text/plain": "'{\"response\": [false, false, false, false, false, true]}'"
+          },
+          "metadata": {}
+        }
+      ],
+      "execution_count": 23,
+      "metadata": {
+        "gather": {
+          "logged": 1726751192072
+        }
+      }
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "name": "python310-sdkv2",
+      "language": "python",
+      "display_name": "Python 3.10 - SDK v2"
+    },
+    "language_info": {
+      "name": "python",
+      "version": "3.10.14",
+      "mimetype": "text/x-python",
+      "codemirror_mode": {
+        "name": "ipython",
+        "version": 3
+      },
+      "pygments_lexer": "ipython3",
+      "nbconvert_exporter": "python",
+      "file_extension": ".py"
+    },
+    "microsoft": {
+      "ms_spell_check": {
+        "ms_spell_check_language": "en"
+      },
+      "host": {
+        "AzureML": {
+          "notebookHasBeenCompleted": true
+        }
+      }
+    },
+    "kernel_info": {
+      "name": "python310-sdkv2"
+    },
+    "nteract": {
+      "version": "nteract-front-end@1.0.0"
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 2
+}

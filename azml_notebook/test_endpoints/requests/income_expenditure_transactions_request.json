@@ -1,0 +1,13 @@
+{
+    "input_data": {
+      "columns": [
+          "ID_FIRMA", "ID_TRANZACTIE_NC", "ID_TRANZACTIE", "ID_NC", "DATA_OPERARE", "DEBIT_CREDIT", 
+          "SUMA", "ID_ARTICOL", "ESTE_ANALITIC", "ESTE_INACTIV", "ID_UTILIZATOR_ADAUGARE", 
+          "DATA_ADAUGARE", "ID_UTILIZATOR_MODIFICARE", "DATA_MODIFICARE"
+      ],
+      "index": [0],
+      "data": [
+          [114, 89, 55, 1, "2022-09-06", "C", 80.40, "null", 0, 0, 56, "2022-09-02 13:50:08.900", 56, "2022-09-02 13:50:08.900"]
+      ]
+  }
+  }

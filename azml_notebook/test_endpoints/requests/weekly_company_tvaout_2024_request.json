@@ -1,0 +1,15 @@
+{
+    "input_data": {
+      "columns": [
+          "START_DATE_WEEK", "ID_FIRMA", "DENUMIRE_FIRMA", "SAPTAMANA_W1", "SAPTAMANA_W1_W4", "SAPTAMANA_W1_W12", 
+          "SAPTAMANA_W1_W52", "SAPTAMANA_W53", "SAPTAMANA_W53_W56", "SAPTAMANA_W53_W64", 
+          "SAPTAMANA_W53_W104"
+      ],
+      "index": [0,1],
+      "data": [
+          ["2024-10-07 00:00:00.000", 71, "High-Tech Systems & Software",14737.55,61238.11,172831.75,712010.07,18035.51,51539.68,158376.45,733970.44],
+          ["2024-10-07 00:00:00.000",72,"Dima - Software and Services",12909.55,51906.54,162034.81,711458.79,11167.94,52542.19,160102.62,684810.84]
+      ]
+  }
+  }																
+

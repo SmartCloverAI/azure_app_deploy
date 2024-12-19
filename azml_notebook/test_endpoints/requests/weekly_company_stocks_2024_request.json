@@ -1,0 +1,15 @@
+{
+    "input_data": {
+      "columns": [
+          "ID_ARTICOL", "ID_CATEGORIE", "ID_FIRMA", "START_DATE_WEEK", "PRET_UNITAR", "DENUMIRE_PRODUCATOR", 
+          "PROC_TVA", "PROCENT_DISCOUNT", "SAPTAMANA_W1", "SAPTAMANA_W1_W4", "SAPTAMANA_W1_W12", 
+          "SAPTAMANA_W1_W52", "SAPTAMANA_W53", "SAPTAMANA_W53_W56", "SAPTAMANA_W53_W64", 
+          "SAPTAMANA_W53_W104", "STOC_W1", "STOC_W2", "STOC_M1"
+      ],
+      "index": [0,1],
+      "data": [
+          [61, "null", 90, "2024-10-07 00:00:00.000", 65.00, "IKEA ROMANIA S.A.", 19, "null", 377.00, 1662.00, 5076.00, 22539.00, 470.00, 1708.00, 5198.00, 22705.00, 113.00, 122.00, 159.00],
+          [157, "null", 124, "2024-10-07 00:00:00.000", 57.00, "VODAFONE ROMANIA SA", 5, "null", 400.00, 1740.00, 5363.00, 22939.00, 435.00, 1730.00, 5388.00, 22604.00, 109.00, 82.00, 86.00]
+      ]
+  }
+  }

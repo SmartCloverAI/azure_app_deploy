@@ -1,0 +1,15 @@
+{
+    "input_data": {
+      "columns": [
+          "START_DATE_WEEK", "ID_FIRMA", "DENUMIRE_FIRMA", "CASH_FLOW_SAPTAMANA_W1", "CASH_FLOW_SAPTAMANA_W1_W4", "CASH_FLOW_SAPTAMANA_W1_W12", 
+          "CASH_FLOW_SAPTAMANA_W1_W52", "CASH_FLOW_SAPTAMANA_W53", "CASH_FLOW_SAPTAMANA_W53_W56", "CASH_FLOW_SAPTAMANA_W53_W64", 
+          "CASH_FLOW_SAPTAMANA_W53_W104"
+      ],
+      "index": [0,1],
+      "data": [
+          ["2024-10-07 00:00:00.000", 71, "High-Tech Systems & Software", 7670.35,5725.65,15013.45,127035.49,2305.89,10491.51,49374.97,136717.80],
+          ["2024-10-07 00:00:00.000",72,"Dima - Software and Services",3779.72,	8506.71,40721.69,144973.21,693.80,22617.84,35375.24,140080.71]
+      ]
+  }
+  }																
+

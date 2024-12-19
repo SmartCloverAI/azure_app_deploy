@@ -1,0 +1,14 @@
+{
+    "input_data": {
+      "columns": [
+          "START_DATE_WEEK", "ID_FIRMA", "DENUMIRE_FIRMA", "CATEGORIE_CHELTUIALA","SAPTAMANA_W1", "SAPTAMANA_W1_W4", "SAPTAMANA_W1_W12", 
+          "SAPTAMANA_W1_W52", "SAPTAMANA_W53", "SAPTAMANA_W53_W56", "SAPTAMANA_W53_W64", 
+          "SAPTAMANA_W53_W104"
+      ],
+      "index": [0,1],
+      "data": [
+          ["2024-10-07 00:00:00.000", 71, "High-Tech Systems & Software","CHELTUIALA",103351.76,464142.11,1477569,6783705.86,96032.32,504884.33,1514655.97,6528953.67],
+          ["2024-10-07 00:00:00.000", 72, "Dima - Software and Services","CHELTUIALA",96075.32,474105.96,1464740.71,6952670.59,123259.47,499435.5,1511132.76,7145708.02]
+      ]
+  }
+  }								
