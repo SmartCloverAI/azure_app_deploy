@@ -1,0 +1,23 @@
+# we are using 3.9.19 due to fixed versions of the packages in the requirements.txt
+FROM python:3.9.19-slim 
+
+# Set the working directory
+WORKDIR /workspace
+
+COPY requirements_azureml_pytorch.txt .
+
+# Install system dependencies required for some Python packages
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    build-essential \
+    libffi-dev \
+    libssl-dev \
+    git \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install the SDK requirements
+RUN pip install -r requirements_azureml_pytorch.txt
+
+ENV BASE_SERVING_ENV_VERSION=0.2.0-full
+
+# Set the default command to bash (optional)
+CMD ["bash"]
