@@ -1,12 +1,24 @@
 services:
   azure-mlflow:
-    image: aidamian/azure-mlflow-test
+    image: aidamian/azure-mlflow-test:latest
+    volumes:
+      - ./models_mflow:/app/models
     hostname: azure-mlflow
     ports:
       - "5051:5051"
 
   azure-tf:
-    image: aidamian/azure-tf-test
+    image: aidamian/azure-tf-test:latest
+    volumes:
+      - ./models_tf:/app/models
     hostname: azure-tf
     ports:
       - "5052:5052"
+  
+  watchtower:
+    image: containrrr/watchtower
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    environment:
+      - WATCHTOWER_CLEANUP=true
+      - WATCHTOWER_POLL_INTERVAL=60 # Check every 1 minute
