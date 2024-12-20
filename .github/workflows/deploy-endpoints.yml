@@ -25,5 +25,5 @@ jobs:
       - name: Build and Push
         run: |
           cd serving_v1/
-          chmod +x build-all.sh  # Ensure the script is executable
+          chmod +x *.sh  # Ensure the script is executable
           ./build-all.sh   
