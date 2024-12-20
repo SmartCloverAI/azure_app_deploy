@@ -4,8 +4,8 @@ WORKDIR /app
 
 COPY ./src .
 
-ENV DEBUG=false
-ENV SERVING_ENV_VERSION=serve-tf-0.2.6
+ENV APP_DEBUG=false
+ENV SERVING_ENV_VERSION=serve-tf-0.2.7
 ENV AIMETHICA_APP_NAME=tfsrv
 
 CMD ["uvicorn", "main:app", "--host", "0.0.0.0", "--port", "5052"]
