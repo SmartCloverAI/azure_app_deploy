@@ -9,6 +9,8 @@ from config import ModelsHandler
 
 from utils import log_with_color, APP_NAME, ENV_VERSION
 
+DEBUG = os.getenv("APP_DEBUG", "false").lower() == "true"
+
 
 log_with_color(f"Starting FastAPI app {APP_NAME} in {ENV_VERSION} environment", color="b")
 
@@ -46,6 +48,8 @@ for model_name in models_handler.models.keys():
       log_with_color(f"Failed to find model {model_name}", color="r")
       raise HTTPException(status_code=404, detail=f"Model {model_name} not found")
     try:
+      if DEBUG:
+        log_with_color(f"Running model {model_name}, env: {ENV_VERSION}", color="b")
       result = model.run(request_data)
     except Exception as e:
       msg = f"Run model exception: {e}"

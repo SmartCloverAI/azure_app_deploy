@@ -1,2 +1,2 @@
-docker build -t aidamian/azure-mlflow-test:latest -f Dockerfile_mlflow .
-docker push aidamian/azure-mlflow-test:latest
+docker build -t aidamian/azure-mlflow-test -f Dockerfile_mlflow .
+docker push aidamian/azure-mlflow-test

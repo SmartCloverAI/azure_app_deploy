@@ -1,7 +1,8 @@
 services:
   devcontainer-mlflow:
-    image: aidamian/azureml-dev-slim
-    hostname: dev-cont-mlflow
+    image: aidamian/azureml-mlflow-pytorch
+    # image: aidamian/azureml-dev-slim
+    hostname: dev-cont-mflow-th
     volumes:
       # Mount the root folder that contains .git
       - .:/workspace:cached
