@@ -4,7 +4,7 @@ FROM python:3.9.19-slim
 # Set the working directory
 WORKDIR /workspace
 
-COPY requirements_basic_th.txt .
+COPY requirements_basic.txt .
 
 # Install system dependencies required for some Python packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -15,7 +15,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     && rm -rf /var/lib/apt/lists/*
 
 # Install the SDK requirements
-RUN pip install -r requirements_basic_th.txt
+RUN pip install -r requirements_basic.txt
+RUN pip install torch --index-url https://download.pytorch.org/whl/cpu
 
 ENV BASE_SERVING_ENV_VERSION=0.1.0-full
 
